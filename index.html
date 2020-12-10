@@ -1,0 +1,193 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="HandheldFriendly" content="true">
+	<title>Home Page</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<header>
+		<div class="container">
+			<nav class="topnav">
+				<div id="logo_placeholder"><span><img src="Images/logo.png" alt="Cupcake Logo"></span></div>
+
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="About.html">About</a></li>
+					<li><a href="recipe.html">Recipes</a></li>
+					<li><a href="review.html">Review</a></li>
+					<li><a href="staple.html">Staple Ingredients</a></li>
+				</ul>
+
+			</nav>
+		</div>
+	</header>
+	<div class="feature">
+		<div class="container">
+
+		</div>
+	</div>
+	<main>
+		<section class="showcase">
+			<div class="container">
+				<div class="slideshow-container">
+
+					<div class="mySlides fade">
+						<div class="numbertext">1 / 3</div>
+						<a href="#"><img src="Images/strawberrypie.jpg" alt="Strawberry Pie with Slice Being Pulled Away" style="width:100%"></a>
+						<div class="text">Gluten Free Strawberry Pie</div>
+					</div>
+
+					<div class="mySlides fade">
+						<div class="numbertext">2 / 3</div>
+						<a href="#"><img src="Images/lemonbread.jpg" alt="Lemon Poppy Seed Bread with Icing" style="width:100%"></a>
+						<div class="text">Gluten Free Vegan Lemon Poppy Seed Bread</div>
+					</div>
+
+					<div class="mySlides fade">
+						<div class="numbertext">3 / 3</div>
+						<a href="#"><img src="Images/oatmealcookies.jpg" alt="Oatmeal Cookies with Raisins on a Plate" style="width:100%"></a>
+						<div class="text">Gluten Free Oatmeal Cookies</div>
+					</div>
+
+					<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+					<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+				</div>
+				<br>
+
+				<div class="dot_click">
+					<span class="dot" onclick="currentSlide(1)"></span>
+					<span class="dot" onclick="currentSlide(2)"></span>
+					<span class="dot" onclick="currentSlide(3)"></span>
+				</div>
+
+				<script>var slideIndex = 1;
+					showSlides(slideIndex);
+
+					function plusSlides(n) {
+						showSlides(slideIndex += n);
+					}
+
+					function currentSlide(n) {
+						showSlides(slideIndex = n);
+					}
+
+					function showSlides(n) {
+						var i;
+						var slides = document.getElementsByClassName("mySlides");
+						var dots = document.getElementsByClassName("dot");
+						if (n > slides.length) { slideIndex = 1 }
+						if (n < 1) { slideIndex = slides.length }
+						for (i = 0; i < slides.length; i++) {
+							slides[i].style.display = "none";
+						}
+						for (i = 0; i < dots.length; i++) {
+							dots[i].className = dots[i].className.replace(" active", "");
+						}
+						slides[slideIndex - 1].style.display = "block";
+						dots[slideIndex - 1].className += " active";
+					}</script>
+			</div>
+		</section>
+		 
+
+		<section class="signup">
+			<div class="container.">
+				<p>Sign up to be notified of new recipes.</p>
+				<form action="welcome.php" method="post">
+					<div class="email_list">
+						<label for="name">Name</label><br>
+						<input type="text">
+						<br><br>
+					</div>
+					<div class="email_list">
+						<label for="email">Email</label><br>
+						<input type="text">
+						<br><br>
+					</div>
+					<a href="#" class="submit_email">Submit</a>
+				</form>
+			</div>
+		</section>
+
+		<section class="discover">
+			<div class="container">
+				<h2>Discover</h2>
+
+				<ul>
+					<li>
+						<div id="diet1">
+							<div class="diet_container">
+								<a href="#"><img src="Images/cookieEdit.jpg" class="image1" alt="Chocolate Cookies with Chocolate Chips"></a>
+							</div>
+							<p>Gluten Free</p>
+
+						</div>
+					</li>
+					<li>
+						<div id="diet2">
+							<div class="diet_container">
+								<a href="#"><img src="Images/chocolatepb.jpg" class="image2" alt="Chocolate Peanut Butter Cups"></a>
+							</div>
+							<p>Vegan</p>
+						</div>
+					</li>
+					<li>
+						<div id="diet3">
+							<div class="diet_container">
+								<a href="#"><img src="Images/pumpkinbread.jpg" class="image3" alt="Pumpkin Bread"></a>
+							</div>
+							<p>Nut Free</p>
+						</div>
+					</li>
+					<li>
+						<div id="diet4">
+							<div class="diet_containter">
+								<a href="#"><img src="Images/brownie.jpg" class="image4" alt="Brownie on a Plate"></a>
+							</div>
+							<p>Low Sugar</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+
+	</main>
+
+		<div class="end_box">
+			<div class="container">
+			<h2 class="about_site">About This Site</h2>
+			<p>
+				Here you can find recipes for your favorite treats that fit your dietary needs. It can be difficult
+				getting started with a new diet, so this site offers advice on ingredient substitutions and recommends
+				the products that work best for baking with your specific diet in mind This site was created by me, Emerald because
+				I have had to adapt to eating with food allergies and a gluten intolerance for most of my life. I thought this meant
+				having to eliminate most of the foods that I enjoy. However, I learned from others in similar situations as me that it
+				did not have to be this way and that many of my favorite foods could be recreated to work with my dietary needs. This led me
+				to set out and create my own recipes through trial and error. I then learned how to create recipes that fit other diets such
+				as vegan and low sugar. I realized that these types of baking often go hand-in-hand, so I made it my goal to help those who have
+				newly adopted an alternative diet and may not know where to start. In addition to offering advice and recipes, this site also gives you the
+				chance to help prefect any existing recipes through reviews. If you have tried out a recipe and have any suggestions or changes to offer, they
+				will be taken into consideration and added to the page for the corresponding recipe with credit. This way, you'll be helping out myself and others.
+			</p>
+			<div class="learn_button">
+				<a href="About.html" class="learn_more">Learn More</a>
+			</div>
+			</div>
+		</div>
+		<footer>
+			<div class="container">
+				<p>(Footer) Site Still Under Construction</p>
+			</div>
+		</footer>
+</body>
+
+</html>
+
+
+

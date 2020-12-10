@@ -1,0 +1,123 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="HandheldFriendly" content="true">
+	<title>Home Page</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<div class="container">
+			<nav class="topnav">
+				<div id="logo_placeholder"><span><img src="Images/logo.png" alt="Cupcake Logo"></span></div>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="About.html">About</a></li>
+					<li><a href="recipe.html">Recipes</a></li>
+					<li><a href="review.html">Review</a></li>
+					<li><a href="staple.html">Staple Ingredients</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<main class="review_main">
+		<div class="container">
+			<div class="review_recipe">
+				<h1>Review Recipe</h1>
+				<div class="dropdown">
+					<button onclick="myFunction()" class="dropbtn">Choose a Recipe</button>
+					<div id="myDropdown" class="dropdown-content">
+						<input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+						<a href="#1">Gluten Free Pumpkin Bread</a>
+						<a href="#2">Shortbread Cookies</a>
+						<a href="#3">Chocolate Chip Oatmeal Cookies</a>
+						<a href="#4">Gluten Free Banana Bread</a>
+						<a href="#5">Flourless, Eggless Brownies</a>
+					</div>
+				</div>
+
+			</div>
+			<script>function myFunction() {
+					document.getElementById("myDropdown").classList.toggle("show");
+				}
+
+				function filterFunction() {
+					var input, filter, ul, li, a, i;
+					input = document.getElementById("myInput");
+					filter = input.value.toUpperCase();
+					div = document.getElementById("myDropdown");
+					a = div.getElementsByTagName("a");
+					for (i = 0; i < a.length; i++) {
+						txtValue = a[i].textContent || a[i].innerText;
+						if (txtValue.toUpperCase().indexOf(filter) > -1) {
+							a[i].style.display = "";
+						} else {
+							a[i].style.display = "none";
+						}
+					}
+				}</script>
+			<div id="rating">
+				<h2>Rating</h2>
+				<div id="rating_boxes" label="rating boxes">
+					<input type="checkbox" id="1">
+					<input type="checkbox" id="2">
+					<input type="checkbox" id="3">
+					<input type="checkbox" id="4">
+					<input type="checkbox" id="5">
+				</div>
+				<div class="comment_box">
+					<label for="comment">Comment</label><br>
+					<input type="text" id="comment">
+					<br><br>
+				</div>
+				<form action="welcome.php" method="post">
+					<div class="name_box">
+						<label for="name">Name</label><br>
+						<input type="text" id="name">
+						<br><br>
+					</div>
+					<div class="email_box">
+						<label for="email">Email</label><br>
+						<input type="text" id="email">
+						<br><br>
+					</div>
+					<div class="submit">
+						<a href="#" class="submit_review">Submit</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</main>
+	<div id="other_recipes">
+		<div class="container">
+			<h3>Other Recipes</h3>
+			<div class="recipe1">
+				<div class="recipe_other">
+					<a href="#"><img src="Images/shortbread.jpg" alt="Shortbread Cookies" style="width:100%"></a>
+				</div>
+				<p>Shortbread Cookies</p>
+			</div>
+			<div class="recipe2">
+				<div class="recipe_other">
+					<a href="#"><img src="Images/pumpkinbread2.jpg" alt="Pumpkin Bread" style="width:100%"></a>
+				</div>
+				<p>Glluten Free Pumpkin Bread</p>
+			</div>
+			<div class="recipe3">
+				<div class="recipe_other">
+					<a href="#"><img src="Images/oatmealcookies.jpg" alt="Oatmeal Cookies with Raisins on a Plate" style="width:100%"></a>
+				</div>
+				<p>Oatmeal Cookies</p>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="container">
+			
+		</div>
+	</footer>
+</body>
+</html>
